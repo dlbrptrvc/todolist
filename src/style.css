@@ -1,0 +1,101 @@
+* {
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+/* slide menu */
+.slidout {
+    transform: translateX(300px);    
+}
+
+.slidin {
+    transform: translateX(-300px);     
+}
+
+#menu {
+    position: fixed;
+    top: 0px;
+    left: -300px;
+    height: max(100vh,100%);
+    transition: 0.5s;
+    width:300px;
+    min-width: 300px;
+    background-color: brown;
+}
+
+/* slide menubtn */
+#menubtn {
+    position: fixed;
+    width: 40px;
+    aspect-ratio: 1;
+    transition: 0.5s
+}
+
+.closemenu {
+    inset: 15px 0 0 315px
+}
+
+.openmenu {
+    inset: 15px 0 0 15px;
+}
+
+@media (min-width: 800px) {
+    #menubtn {
+        display:none;
+    }
+    .slidin {
+        transform: translateX(300px);
+    }
+    #menu {
+        transition: none;
+        position: relative;
+    }
+}
+
+#container {
+    display:flex;
+    height:max(100%,100vh);
+}
+
+#main {
+    width:100%;
+    height: max(100%,100vh);
+    background-color: aqua;
+    transition: 0.5s;
+}
+/* end of slide logic */
+/* main list css */
+
+#main {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.header {
+    text-align: center;
+    font-size: 50px;
+}
+
+.footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height:30px;
+    padding: 5px 5px 5px 5px;
+}
+
+#addbtn {
+    position: fixed;
+    width: 40px;
+    aspect-ratio: 1;
+    right:30px;
+    bottom:30px;
+}

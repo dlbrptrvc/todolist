@@ -1,3 +1,4 @@
 import './style.css'
+import { slideDynamic } from './slide'
 
-console.log("We're in.")
+slideDynamic()
