@@ -99,3 +99,34 @@ body {
     right:30px;
     bottom:30px;
 }
+
+/* edittask popup */
+.flexwrapper{
+    position: fixed;
+    top:0px;
+    left:0px;
+    width:max(100%,100vw);
+    height: max(100%,100vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -10;
+}
+#edittask {
+    width: min(100vw,500px);
+    height: min(100vh,700px);
+    display:flex;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+.infobtns {
+    margin-top: auto;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+

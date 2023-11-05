@@ -11,7 +11,7 @@
         <div class="slidin" id="menu"></div>
         <div id="main">
             <div class="header">To Do List:</div>
-            <div id="list"></div>
+            <div id="list">Some items</div>
             <div class="footer">dlbrptrvc&copy <script>
                 document.write(new Date().getFullYear())
             </script></div>
@@ -19,6 +19,27 @@
     </div>
     <div class="openmenu" data-open="false" id="menubtn"></div>
     <div id="addbtn"></div>
+    <div class="flexwrapper">
+        <div id="edittask">
+            <div class="infoitem">
+                <div class="infotext">Project:</div>
+                <input type="text" id="projectname" class="lineinput">
+            </div>
+            <div class="infoitem">
+                <div class="infotext">Task:</div>
+                <textarea id="taskinfo" class="textinput"></textarea>
+            </div>
+            <div class="infoitem">
+                <div class="infotext">Due Date:</div>
+                <input type="datetime-local" name="#" id="taskdate">
+            </div>
+            <div class="infobtns">
+                <div class="infobtn" id="savetask">Save</div>
+                <div class="infobtn" id="deletetask">Delete</div>
+                <div class="infobtn" id="canceledit">Cancel</div>
+            </div>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
