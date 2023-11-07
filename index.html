@@ -8,18 +8,34 @@
 </head>
 <body>
     <div id="container">
-        <div class="slidin" id="menu"></div>
+        <div class="slidin" id="menu" data-selected="alltasks">
+            <div class="menuitem selectedmenuitem" id="alltasks">All Tasks</div>
+            <div class="menuitem" id="today">Today</div>
+            <div class="menuitem" id="thisweek">This Week</div>
+        </div>
         <div id="main">
             <div class="header">To Do List:</div>
-            <div id="list">Some items</div>
+            <div id="list">
+                <div class="listitem" id="listitem0">
+                    <div class="left">
+                        <div class="checkbox taskbtn"></div>
+                        <div class="description">Make a to do list</div>
+                    </div>
+                    <div class="right">
+                        <div class="datedue">Today</div>
+                        <div class="edittaskbtn taskbtn"></div>
+                        <div class="removetaskbtn taskbtn"></div>
+                    </div>
+                </div>
+            </div>
             <div class="footer">dlbrptrvc&copy <script>
                 document.write(new Date().getFullYear())
             </script></div>
         </div>
     </div>
-    <div class="openmenu" data-open="false" id="menubtn"></div>
+    <div class="openmenu closed" data-open="false" id="menubtn"></div>
     <div id="addbtn"></div>
-    <div class="flexwrapper">
+    <div id="flexwrapper">
         <div id="edittask">
             <div class="infoitem">
                 <div class="infotext">Project:</div>
