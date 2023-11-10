@@ -1,0 +1,341 @@
+@font-face {
+    font-family: 'MenuFont';
+    src: url(./fonts/Goladon.otf)
+  }
+@font-face {
+    font-family: 'TitleFont';
+    src: url(./fonts/Silent\ Reaction.ttf)
+  }
+  
+  
+
+* {
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --first-color: #e4f1fe; 
+    --second-color: #8dc6ff; 
+    --third-color: #22313f; 
+    --fourth-color: #34495e;    
+}
+
+body {
+    height: 100vh;
+}
+
+/* slide menu */
+.slidout {
+    transform: translateX(300px);    
+}
+
+.slidin {
+    transform: translateX(-300px);     
+}
+
+#menu {
+    position: fixed;
+    top: 0px;
+    left: -300px;
+    height: max(100vh,100%);
+    transition: 0.5s;
+    width:300px;
+    min-width: 300px;
+    background-color:var(--third-color);
+    color:var(--first-color);
+    display: flex;
+    flex-direction: column;
+}
+
+/* slide menubtn */
+#menubtn {
+    position: fixed;
+    width: 50px;
+    aspect-ratio: 1;
+    transition: 0.5s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px 50px;
+}
+
+.open {
+    background-image: url(./images/x2.png); 
+}
+
+.closed {
+    background-image: url(./images/menu2.png);   
+}
+
+.closemenu {
+    inset: 30px 0 0 330px
+}
+
+.openmenu {
+    inset: 30px 0 0 30px;
+}
+
+@media (min-width: 800px) {
+    #menubtn {
+        display:none;
+    }
+    .slidin {
+        transform: translateX(300px);
+    }
+    #menu {
+        transition: none;
+        position: relative;
+    }
+}
+
+#container {
+    display:flex;
+    height:max(100%,100vh);
+}
+
+#main {
+    width:100%;
+    height: max(100%,100vh);
+    background-color: white;
+    /* transition: 0.5s; */
+}
+/* end of slide logic */
+/* main list css */
+
+#main {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.header {
+    text-align: center;
+    font-size: 50px;
+    font-family: TitleFont;
+    padding: 30px 10px 10px 10px;
+}
+
+.footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height:30px;
+    padding: 5px 5px 5px 5px;
+}
+
+#addbtn {
+    position: fixed;
+    width: 50px;
+    border-radius: 20px;
+    aspect-ratio: 1;
+    right:30px;
+    bottom:30px;
+    background-image: url(./images/add2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px 50px;
+}
+
+/* edittask popup */
+#flexwrapper{
+    display: none;
+    position: fixed;
+    top:0px;
+    left:0px;
+    width:max(100%,100vw);
+    height: max(100%,100vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    backdrop-filter: blur(2px);
+}
+#edittask {
+    padding:20px 20px 20px 20px;
+    width: min(100vw,500px);
+    height: min(100vh,500px);
+    display:flex;
+    flex-direction: column;
+    background-color: var(--first-color);
+    border: 1px solid var(--third-color);
+    border-radius: 10px;
+    display: hidden;
+    /* https://smoothshadows.com/#djEsMSw1LDAuMDgsMjQsMzIsMCwjMDMwNzEyLCNmM2Y0ZjYsI2ZmZmZmZiwy */
+box-shadow: 0px 1px 1px rgba(3, 7, 18, 0.02),
+0px 5px 4px rgba(3, 7, 18, 0.03),
+0px 12px 9px rgba(3, 7, 18, 0.05),
+0px 20px 15px rgba(3, 7, 18, 0.06),
+0px 32px 24px rgba(3, 7, 18, 0.08);
+
+}
+
+.infobtns {
+    margin-top: 20%;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.infobtn {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: var(--third-color);
+    color: var(--first-color);
+    font-family: MenuFont;
+    font-size: 20px;
+}
+.infoitem {
+    margin: 20px 20px 20px 20px
+}
+.infotext {
+    font-family: MenuFont;
+    font-size: 20px;
+}
+
+.lineinput {
+    padding-left: 5px;
+    height: 30px;
+    width:90%;
+    align-self:center;
+    font-size: 16px;
+}
+
+.textinput {
+    padding: 5px 5px 5px 5px;
+    font-size: 16px;
+    padding-left: 5px;
+    height: 120px;
+    width:90%;
+    align-self: center;
+    resize:none;
+    font-family: Arial, Helvetica, sans-serif
+}
+#taskdate {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/* menuitems */
+
+.menuitem {
+    padding: 20px;
+    font-size: 20px;
+    user-select: none;
+    font-family: MenuFont;
+    transition: 0.5s;
+}
+
+.menuitem:hover {
+    border: 1px solid var(--second-color);
+
+}
+
+.selectedmenuitem {
+    border-left: 4px solid var(--second-color);
+}
+
+/* listitems */
+
+#list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.description {
+    width: 95%;
+    white-space:pre-wrap;
+    height: fit-content;
+    word-wrap:break-word;
+}
+
+.listitem {
+    margin: 5px 5px 5px 5px;
+    width: 95%;
+    height: fit-content;
+    min-height: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--third-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left {
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.right {
+    min-width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.left>*,
+.right>* {
+    padding: 0 5px 0 5px;
+}
+
+.checkbox {
+    margin: 0 0 0 10px;
+    width:20px;
+    min-width: 20px;
+    aspect-ratio: 1;
+    border: 1px solid var(--fourth-color);
+}
+
+.checked .checkbox {
+    background-image: url(./images/check2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
+.checked .edittaskbtn {
+    background-image: url(./images/edit2.png);
+}
+
+.checked .removetaskbtn {
+    background-image: url(./images/delete2.png);
+}
+
+.checked {
+    background-color: var(--third-color);
+    color: var(--first-color);
+}
+
+.edittaskbtn {
+    margin: 0 5px 0 0;
+    width:20px;
+    aspect-ratio: 1;
+    background-image: url(./images/edit.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px; 
+}
+
+.removetaskbtn {
+    margin: 0 10px 0 0;
+    width:20px;
+    aspect-ratio: 1;
+    background-image: url(./images/delete.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
+
