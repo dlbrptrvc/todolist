@@ -16,17 +16,6 @@
         <div id="main">
             <div class="header">To Do List:</div>
             <div id="list">
-                <div class="listitem" id="listitem0">
-                    <div class="left">
-                        <div class="checkbox taskbtn"></div>
-                        <div class="description">Make a to do list</div>
-                    </div>
-                    <div class="right">
-                        <div class="datedue">Today</div>
-                        <div class="edittaskbtn taskbtn"></div>
-                        <div class="removetaskbtn taskbtn"></div>
-                    </div>
-                </div>
             </div>
             <div class="footer">dlbrptrvc&copy <script>
                 document.write(new Date().getFullYear())
@@ -36,7 +25,7 @@
     <div class="openmenu closed" data-open="false" id="menubtn"></div>
     <div id="addbtn"></div>
     <div id="flexwrapper">
-        <div id="edittask" data-index="0">
+        <div id="edittask" data-index="0" data-project="">
             <div class="infoitem">
                 <div class="infotext">Project:</div>
                 <input type="text" id="projectname" class="lineinput">
@@ -51,7 +40,6 @@
             </div>
             <div class="infobtns">
                 <div class="infobtn" id="savetask">Save</div>
-                <div class="infobtn" id="deletetask">Delete</div>
                 <div class="infobtn" id="canceledit">Cancel</div>
             </div>
         </div>
