@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'MenuFont';
+    src: url(./fonts/Goladon.otf)
+  }
+@font-face {
+    font-family: 'TitleFont';
+    src: url(./fonts/Silent\ Reaction.ttf)
+  }
+  
+  
+
 * {
     /* border: 1px solid black; */
     box-sizing: border-box;
