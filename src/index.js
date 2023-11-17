@@ -1,4 +1,3 @@
-import './style.css'
 import { slideDynamic } from './slide'
 import { menuDynamic } from './menu'
 import { Task } from './class'
@@ -21,7 +20,11 @@ addbtn.addEventListener('click',()=>{
     edittask.dataset.index = taskList.length
     edittask.dataset.project = ''
     // clear all input fields
-    projectname.value = ''
+    if (menu.dataset.selected.startsWith('project')){
+        projectname.value = menu.dataset.selected.substring(8)
+    } else {
+        projectname.value = ''
+    }
     taskinfo.value = ''
     let dateTime = new Date()
     dateTime.setMinutes(dateTime.getMinutes() - dateTime.getTimezoneOffset())

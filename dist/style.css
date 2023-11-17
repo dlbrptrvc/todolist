@@ -55,10 +55,12 @@ body {
     position: fixed;
     width: 50px;
     aspect-ratio: 1;
-    transition: 0.5s;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50px 50px;
+    z-index: 100;
+    background-color: white;
+    border-radius: 25px;
 }
 
 .open {
@@ -70,11 +72,13 @@ body {
 }
 
 .closemenu {
-    inset: 30px 0 0 330px
+    top: 30px;
+    right: 30px;
 }
 
 .openmenu {
-    inset: 30px 0 0 30px;
+    top: 30px;
+    left: 30px;
 }
 
 @media (min-width: 800px) {
@@ -136,7 +140,7 @@ body {
 #addbtn {
     position: fixed;
     width: 50px;
-    border-radius: 20px;
+    border-radius: 25px;
     aspect-ratio: 1;
     right:30px;
     bottom:30px;
@@ -144,6 +148,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50px 50px;
+    z-index: 100;
+    background-color: white;
 }
 
 /* edittask popup */
